@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="AnagramsTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-09-07T21:58:51" hostname="epicodus-10.local" time="0.001">
+  <properties/>
+  <testcase name="runAnagram_checkLengthIsSame_boolean" classname="AnagramsTest" time="0.001"/>
+  <testcase name="runAnagram_checkIfWordsContainSameChar_boolean" classname="AnagramsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
