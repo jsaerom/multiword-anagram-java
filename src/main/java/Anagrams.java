@@ -4,20 +4,43 @@ import java.util.Arrays;
 
 public class Anagrams{
 
-  public static boolean runAnagram(String firstInput, String secondInput) {
-    boolean isAnagram = false;
-    if (firstInput.length() != secondInput.length()) {
-      isAnagram = false;
+  public static String runAnagram(String input) {
+    String[] inputArray = input.split(" ");
+    List<String> anagramArray = new ArrayList<String>();
+    String holder = null;
+
+
+
+    for (int i = 0; i < inputArray.length; i++){
+      holder = inputArray[i];
+      if (anagramArray.contains(holder)) {
+      break;
+    } else {
+      //
+      // for (int n = 0; n <= anagramArray.size(); n++){
+      //   if (holder.equals(anagramArray.get(n))){
+      //     continue;
+      //   } else{
+
+          char[] holderArray = holder.toCharArray();
+          Arrays.sort(holderArray);
+          String sortedHolder = String.valueOf(holderArray);
+          for (int j = i+1 ; j < inputArray.length; j++){
+            char[] testingArray = inputArray[j].toCharArray();
+            Arrays.sort(testingArray);
+            String sortedTest = String.valueOf(testingArray);
+            if (sortedHolder.equals(sortedTest)){
+              anagramArray.add(inputArray[i]);
+              anagramArray.add(inputArray[j]);
+            }
+          }
+        // }
+      }
     }
-    else {
-      firstInput = firstInput.toLowerCase();
-      secondInput = secondInput.toLowerCase();
-      char[] firstInputArray = firstInput.toCharArray();
-      char[] secondInputArray = secondInput.toCharArray();
-      Arrays.sort(firstInputArray);
-      Arrays.sort(secondInputArray);
-      isAnagram = Arrays.equals(firstInputArray, secondInputArray);
-    }
-  return isAnagram;
+
+
+
+    String output = String.join(" ", anagramArray);
+    return output;
   }
 }
